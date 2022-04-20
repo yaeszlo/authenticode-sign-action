@@ -80,7 +80,7 @@ async function signWithCloudSigntool() {
     	} else {
     	    options += ` -nph`
     	}
-    	const cmd = `"${signtool}" sign -kac "${credentialsFileName}" -ac "${certificateFileName}" ${options} -k "${core.getInput('key-uri')}" -ifl "${toSignFileName}" -v`;
+    	const cmd = `"${signtool}" sign -kac "${credentialsFileName}" -ac "${certificateFileName}" ${options} -k "${core.getInput('key-uri')}" -ifl "${toSignFileName}" -v -coe`;
     	console.log(cmd);
     	const { stdout } = await asyncExec(cmd);
     	console.log(stdout);
